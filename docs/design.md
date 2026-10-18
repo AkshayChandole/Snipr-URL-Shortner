@@ -514,7 +514,8 @@ Public / ops
 | Concern | Choice | Why |
 |---------|--------|-----|
 | Build tool | Vite | Fast dev server and builds |
-| Language | React 18 + **TypeScript (strict)** | Type safety across API boundaries |
+| Language | React 19 + **TypeScript (strict)** | Type safety across API boundaries |
+| Lint / format | Oxlint + Prettier | Oxlint is a Rust linter, 50–100× faster than ESLint, and the Vite default; Prettier for formatting |
 | Routing | React Router | Standard, supports protected routes |
 | Server state | TanStack Query | Caching, retries, request deduplication |
 | Forms / validation | react-hook-form + zod | Performant forms, schema validation shared with types |
@@ -618,3 +619,4 @@ How the design grows toward the targets in §3 without a rewrite:
 | Date       | Change                                                                 |
 |------------|------------------------------------------------------------------------|
 | 2026-10-18 | Initial design: random codes, login-required creation, Redis Streams analytics, 90-day raw retention |
+| 2026-10-18 | Frontend: React 18 → React 19 and ESLint → Oxlint (current Vite template defaults, both stable) |
