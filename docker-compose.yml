@@ -1,0 +1,46 @@
+# Local development infrastructure: PostgreSQL + Redis.
+# The API and frontend run on the host (uv / npm) for fast reloads.
+#
+#   docker compose up -d        # start
+#   docker compose down         # stop (data is kept in named volumes)
+#   docker compose down -v      # stop and delete data
+
+name: snipr
+
+services:
+  postgres:
+    # Pinned major version matches the managed Postgres we deploy to (Neon).
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-snipr}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-snipr}
+      POSTGRES_DB: ${POSTGRES_DB:-snipr}
+    ports:
+      # Bind to localhost only, never expose the dev DB on the network.
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    # 7.x keeps command parity with Upstash, our production Redis.
+    image: redis:7.4-alpine
+    # appendonly: persist the click stream across container restarts.
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres-data:
+  redis-data:

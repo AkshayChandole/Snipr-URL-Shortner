@@ -17,6 +17,18 @@ frontend/   React single-page application
 docs/       System design and documentation
 ```
 
+## Local development
+
+Prerequisites: [Docker](https://docs.docker.com/get-docker/), [uv](https://docs.astral.sh/uv/), Node.js 22+.
+
+```bash
+cp .env.example .env
+docker compose up -d                 # PostgreSQL + Redis
+```
+
+Then follow [`backend/README.md`](backend/README.md) and
+[`frontend/README.md`](frontend/README.md).
+
 ## License
 
 [MIT](LICENSE)
