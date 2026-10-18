@@ -1,0 +1,10 @@
+# Normalise line endings so Windows contributors don't introduce CRLF diffs
+* text=auto eol=lf
+
+# Lockfiles: treat as generated, collapse in diffs
+uv.lock linguist-generated=true -diff
+package-lock.json linguist-generated=true -diff
+
+*.png binary
+*.jpg binary
+*.ico binary

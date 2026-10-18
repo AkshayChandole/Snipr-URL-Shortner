@@ -1,0 +1,38 @@
+# ---------- OS / editors ----------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# ---------- Local tooling ----------
+.claude/
+
+# ---------- Secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+
+# ---------- Node / frontend ----------
+node_modules/
+dist/
+coverage/
+*.local
+playwright-report/
+test-results/
+
+# ---------- Logs ----------
+*.log
