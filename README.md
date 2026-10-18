@@ -28,6 +28,13 @@ cp .env.example .env
 docker compose up -d                 # PostgreSQL + Redis
 ```
 
+Install the git hooks (lint, format and secret scanning on every commit):
+
+```bash
+uv tool install pre-commit
+pre-commit install
+```
+
 Then follow [`backend/README.md`](backend/README.md) and
 [`frontend/README.md`](frontend/README.md).
 
