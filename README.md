@@ -1,5 +1,7 @@
 # Snipr
 
+[![CI](https://github.com/AkshayChandole/Snipr/actions/workflows/ci.yml/badge.svg)](https://github.com/AkshayChandole/Snipr/actions/workflows/ci.yml)
+
 A production-grade URL shortener with user accounts, custom aliases, link
 expiry, click analytics, QR codes and API keys.
 
@@ -19,7 +21,7 @@ docs/       System design and documentation
 
 ## Local development
 
-Prerequisites: [Docker](https://docs.docker.com/get-docker/), [uv](https://docs.astral.sh/uv/), Node.js 22+.
+Prerequisites: [Docker](https://docs.docker.com/get-docker/), [uv](https://docs.astral.sh/uv/), Node.js 24 (see `frontend/.nvmrc`).
 
 ```bash
 cp .env.example .env
