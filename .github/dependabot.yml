@@ -16,6 +16,11 @@ updates:
     groups:
       npm-deps:
         patterns: ["*"]
+    # @types/node must match the Node major we run (frontend/.nvmrc);
+    # bump both together when upgrading Node.
+    ignore:
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
