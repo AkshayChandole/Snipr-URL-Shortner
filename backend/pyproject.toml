@@ -21,6 +21,11 @@ dev = [
 [tool.uv]
 package = false
 
+[[tool.uv.index]]
+name = "private"
+url = "https://pypi.org/simple"
+default = true
+
 # ---------------------------------------------------------------- Ruff ----
 [tool.ruff]
 target-version = "py313"
