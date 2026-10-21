@@ -1,6 +1,6 @@
 # Snipr
 
-[![CI](https://github.com/AkshayChandole/Snipr/actions/workflows/ci.yml/badge.svg)](https://github.com/AkshayChandole/Snipr/actions/workflows/ci.yml)
+[![CI](https://github.com/AkshayChandole/Snipr-URL-Shortner/actions/workflows/ci.yml/badge.svg)](https://github.com/AkshayChandole/Snipr-URL-Shortner/actions/workflows/ci.yml)
 
 A production-grade URL shortener with user accounts, custom aliases, link
 expiry, click analytics, QR codes and API keys.
