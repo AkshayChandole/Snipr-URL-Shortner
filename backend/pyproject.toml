@@ -22,7 +22,7 @@ dev = [
 package = false
 
 [[tool.uv.index]]
-name = "private"
+name = "pypi"
 url = "https://pypi.org/simple"
 default = true
 
