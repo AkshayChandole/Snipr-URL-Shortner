@@ -26,3 +26,10 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # Major versions must match our managed services (Neon Postgres, Upstash
+    # Redis) and may need migration steps, so we upgrade them deliberately.
+    ignore:
+      - dependency-name: postgres
+        update-types: ["version-update:semver-major"]
+      - dependency-name: redis
+        update-types: ["version-update:semver-major"]
