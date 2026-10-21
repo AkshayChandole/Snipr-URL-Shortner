@@ -79,6 +79,10 @@ jobs:
         with:
           fetch-depth: 0   # scan full history, not just the latest commit
 
-      - uses: gitleaks/gitleaks-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Run the official image directly instead of gitleaks-action: it pins an
+      # exact version (same as .pre-commit-config.yaml) and doesn't break on the
+      # first push to a new branch, where there is no "before" commit.
+      - name: Scan full history with gitleaks
+        run: >-
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.30.1
+          git --redact --verbose /repo
