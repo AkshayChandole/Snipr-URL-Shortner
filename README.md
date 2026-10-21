@@ -16,7 +16,7 @@ expiry, click analytics, QR codes and API keys.
 ```
 backend/    FastAPI application
 frontend/   React single-page application
-docs/       System design and documentation
+docs/       System design (design.md) and roadmap (roadmap.md)
 ```
 
 ## Local development
